@@ -1,18 +1,16 @@
 {
   "name": "beacon-gpio",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodejs index.js"
+    "start": "node index.js"
   },
   "author": "Arvin Huang",
   "license": "ISC",
   "dependencies": {
     "bluetooth-hci-socket": "^0.5.1",
     "eddystone-beacon": "^1.0.7",
-    "express": "^4.15.3",
     "raspi-sensors": "^0.2.11",
     "rpi-gpio": "^0.8.1"
   }
