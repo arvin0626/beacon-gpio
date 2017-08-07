@@ -19,40 +19,40 @@ function start(route, handle) {
     '<head>'+
     '<meta http-equiv="Content-Type" content="text/html; '+
     'charset=UTF-8" />'+
-    '<title>電扇控制</title>'+
+    '<title>電源控制</title>'+
     '</head>'+
     '<body>'+
 
 //監視攝影機
 
     '<center>'+
-      '<img src="http://arvin.ddns.net:8080/?action=stream" />'+
+
+//有網路使用
+    '<img src="http://arvin.ddns.net:8080/?action=stream" />'+
+
+//無網路使用
+//  '<img src="http://192.168.3.1:8080/?action=stream" />'+
+
     '</center>'+
     '</br>'+
 
-//風扇正轉
-    '<form action="/motor_front" method="post">'+
-    '<button name="motor_front" value="motor_front" style="width:1000px;height:200px;font-size:60px;">風扇正轉</button>'+
-    '</form>'+
-    '</br>'+
+//插座開啟
+    '<form action="/plug_on" method="post">'+
+        '<button name="plug_on" value="plug_on" style="width:1000px;height:200px;font-size:60px;">插座開啟</button>'+
+            '</form>'+
+                '</br>'+
 
 
-//風扇反轉
-    '<form action="/motor_back" method="post">'+
-    '<button name="motor_back" value="motor_back" style="width:1000px;height:200px;font-size:60px;">風扇反轉</button>'+
-    '</form>'+
-    '</br>'+
+//插座關閉
+    '<form action="/plug_off" method="post">'+
+            '<button name="plug_off" value="plug_off" style="width:1000px;height:200px;font-size:60px;">插座關閉</button>'+
+                        '</form>'+
+                                        '</br>'+
+ 
+				     
 
-
-//風扇停止
-    '<form action="/motor_stop" method="post">'+
-    '<button name="motor_stop" value="motor_stop" style="width:1000px;height:200px;font-size:60px;">風扇停止</button>'+
-    '</form>'+
-    '</br>'+
-
-
-    '</body>'+
-    '</html>';
+'</body>'+
+'</html>';
 
 // response.writeHead(200, {"Content-Type": "text/html"});
  

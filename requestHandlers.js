@@ -7,11 +7,12 @@ function start() {
 
  console.log("GPIO Pin Setup");
 
- gpio.setup(31, gpio.DIR_OUT);
- gpio.setup(33, gpio.DIR_OUT);
+// gpio.setup(31, gpio.DIR_OUT);
+// gpio.setup(33, gpio.DIR_OUT);
 
- gpio.setup(35, gpio.DIR_OUT);
- gpio.setup(37, gpio.DIR_OUT);
+// gpio.setup(35, gpio.DIR_OUT);
+// gpio.setup(37, gpio.DIR_OUT);
+
 
 }
 
@@ -61,8 +62,37 @@ function motor_stop() {
 
 }
 
+function plug_on() {
+	
+	console.log("Request handler '插座開啟' was called.");
+
+	gpio.write(8, true, function(err) {
+		
+		if (err) throw err;
+		console.log('Written to pin8 On');
+         });
+
+}
+
+
+function plug_off() {
+	
+	console.log("Request handler '插座關閉' was called.");
+	
+	gpio.write(8, false, function(err) {
+		                   
+		if (err) throw err;
+		console.log('Written to pin8 Off');
+	});
+
+}
+
+
+
 exports.start = start;
 exports.motor_front = motor_front;
 exports.motor_back =  motor_back;
 exports.motor_stop =  motor_stop;
+exports.plug_on  =  plug_on;
+exports.plug_off  =  plug_off;
 
